@@ -20,5 +20,4 @@ export default {
   deletePost (id) {
     return Api().delete('posts/' + id)
   }
-
 }

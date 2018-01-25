@@ -35,13 +35,6 @@ export default {
   data () {
     return {
       posts: []
-      // posts:
-      //       [
-      //         {
-      //           title:"React",
-      //           description:'React is good'
-      //         }
-      //       ]
     }
   },
   mounted () {
