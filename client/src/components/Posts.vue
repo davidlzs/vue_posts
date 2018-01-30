@@ -16,7 +16,7 @@
           <td>{{post.description}}</td>
           <td align="center">
             <router-link :to="{ name: 'EditPost', params: {id: post._id} }">Edit</router-link>|
-            <a href="" @click="deletePost(post._id)">Delete</a>
+            <a href="#" @click="deletePost(post._id)">Delete</a>
           </td>
         </tr>
       </table>
@@ -48,6 +48,7 @@ export default {
 
     async deletePost (id) {
       await PostsService.deletePost(id)
+      this.getPosts()
       this.$router.push({name: 'Posts'})
     }
   }

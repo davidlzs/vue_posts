@@ -10,7 +10,15 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/posts')
+//mongoose.connect('mongodb://localhost/posts')
+/*
+Use environment variables:
+  MONGODB_POSTS_USER
+  MONGODB_POSTS_PWD
+  MONGODB_POSTS_URL ds117848.mlab.com:17848
+*/
+
+mongoose.connect('mongodb://' + process.env.MONGODB_POSTS_USER + ':' + process.env.MONGODB_POSTS_PWD + '@' + process.env.MONGODB_POSTS_URL + '/posts_vuejs')
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"))
   .once("open", function(callback) {
